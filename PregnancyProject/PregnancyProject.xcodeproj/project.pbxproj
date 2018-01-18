@@ -8,20 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		71AC705C200E986C00B6A06C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC705B200E986C00B6A06C /* AppDelegate.swift */; };
-		71AC705E200E986C00B6A06C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC705D200E986C00B6A06C /* ViewController.swift */; };
 		71AC7061200E986C00B6A06C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71AC705F200E986C00B6A06C /* Main.storyboard */; };
 		71AC7063200E986C00B6A06C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71AC7062200E986C00B6A06C /* Assets.xcassets */; };
 		71AC7066200E986C00B6A06C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71AC7064200E986C00B6A06C /* LaunchScreen.storyboard */; };
+		71AC7070200FE9DE00B6A06C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AC706F200FE9DE00B6A06C /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		71AC7058200E986C00B6A06C /* PregnancyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PregnancyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71AC705B200E986C00B6A06C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		71AC705D200E986C00B6A06C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		71AC7060200E986C00B6A06C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		71AC7062200E986C00B6A06C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71AC7065200E986C00B6A06C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71AC7067200E986C00B6A06C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71AC706D200FE9D600B6A06C /* PregnancyProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PregnancyProject.entitlements; sourceTree = "<group>"; };
+		71AC706F200FE9DE00B6A06C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71AC7070200FE9DE00B6A06C /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +42,7 @@
 			children = (
 				71AC705A200E986C00B6A06C /* PregnancyProject */,
 				71AC7059200E986C00B6A06C /* Products */,
+				71AC706E200FE9DE00B6A06C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +57,78 @@
 		71AC705A200E986C00B6A06C /* PregnancyProject */ = {
 			isa = PBXGroup;
 			children = (
-				71AC705B200E986C00B6A06C /* AppDelegate.swift */,
-				71AC705D200E986C00B6A06C /* ViewController.swift */,
-				71AC705F200E986C00B6A06C /* Main.storyboard */,
-				71AC7062200E986C00B6A06C /* Assets.xcassets */,
-				71AC7064200E986C00B6A06C /* LaunchScreen.storyboard */,
-				71AC7067200E986C00B6A06C /* Info.plist */,
+				71AC706D200FE9D600B6A06C /* PregnancyProject.entitlements */,
+				71AC70792011079900B6A06C /* Helpers */,
+				71AC70782011078D00B6A06C /* Models */,
+				71AC70772011078700B6A06C /* ModelControllers */,
+				71AC70762011076700B6A06C /* Views */,
+				71AC70752011074300B6A06C /* ViewControllers */,
+				71AC707A201107EF00B6A06C /* Storyboards */,
+				71AC7072201106E300B6A06C /* Resources */,
 			);
 			path = PregnancyProject;
+			sourceTree = "<group>";
+		};
+		71AC706E200FE9DE00B6A06C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71AC706F200FE9DE00B6A06C /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		71AC7072201106E300B6A06C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				71AC705B200E986C00B6A06C /* AppDelegate.swift */,
+				71AC7062200E986C00B6A06C /* Assets.xcassets */,
+				71AC7067200E986C00B6A06C /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		71AC70752011074300B6A06C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		71AC70762011076700B6A06C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		71AC70772011078700B6A06C /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		71AC70782011078D00B6A06C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		71AC70792011079900B6A06C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		71AC707A201107EF00B6A06C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				71AC705F200E986C00B6A06C /* Main.storyboard */,
+				71AC7064200E986C00B6A06C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +164,14 @@
 					71AC7057200E986C00B6A06C = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -136,7 +211,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71AC705E200E986C00B6A06C /* ViewController.swift in Sources */,
 				71AC705C200E986C00B6A06C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PregnancyProject/PregnancyProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RNFZPCD4YL;
 				INFOPLIST_FILE = PregnancyProject/Info.plist;
@@ -289,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PregnancyProject/PregnancyProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RNFZPCD4YL;
 				INFOPLIST_FILE = PregnancyProject/Info.plist;
