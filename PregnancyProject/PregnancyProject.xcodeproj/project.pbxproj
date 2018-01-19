@@ -12,6 +12,11 @@
 		71AC7063200E986C00B6A06C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71AC7062200E986C00B6A06C /* Assets.xcassets */; };
 		71AC7066200E986C00B6A06C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71AC7064200E986C00B6A06C /* LaunchScreen.storyboard */; };
 		71AC7070200FE9DE00B6A06C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AC706F200FE9DE00B6A06C /* CloudKit.framework */; };
+		71AC707C2011D7DB00B6A06C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71AC707B2011D7DB00B6A06C /* Default-568h@2x.png */; };
+		71AC707E2011D85800B6A06C /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC707D2011D85800B6A06C /* CloudKitManager.swift */; };
+		71AC70802011D97C00B6A06C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC707F2011D97C00B6A06C /* User.swift */; };
+		71AC70822011DA5000B6A06C /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC70812011DA5000B6A06C /* Entry.swift */; };
+		71AC70842011DA6600B6A06C /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC70832011DA6600B6A06C /* Child.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		71AC7067200E986C00B6A06C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71AC706D200FE9D600B6A06C /* PregnancyProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PregnancyProject.entitlements; sourceTree = "<group>"; };
 		71AC706F200FE9DE00B6A06C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		71AC707B2011D7DB00B6A06C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		71AC707D2011D85800B6A06C /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		71AC707F2011D97C00B6A06C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		71AC70812011DA5000B6A06C /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		71AC70832011DA6600B6A06C /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +50,7 @@
 		71AC704F200E986C00B6A06C = {
 			isa = PBXGroup;
 			children = (
+				71AC707B2011D7DB00B6A06C /* Default-568h@2x.png */,
 				71AC705A200E986C00B6A06C /* PregnancyProject */,
 				71AC7059200E986C00B6A06C /* Products */,
 				71AC706E200FE9DE00B6A06C /* Frameworks */,
@@ -65,6 +76,7 @@
 				71AC70752011074300B6A06C /* ViewControllers */,
 				71AC707A201107EF00B6A06C /* Storyboards */,
 				71AC7072201106E300B6A06C /* Resources */,
+				71AC7067200E986C00B6A06C /* Info.plist */,
 			);
 			path = PregnancyProject;
 			sourceTree = "<group>";
@@ -82,7 +94,6 @@
 			children = (
 				71AC705B200E986C00B6A06C /* AppDelegate.swift */,
 				71AC7062200E986C00B6A06C /* Assets.xcassets */,
-				71AC7067200E986C00B6A06C /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -111,6 +122,9 @@
 		71AC70782011078D00B6A06C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				71AC707F2011D97C00B6A06C /* User.swift */,
+				71AC70812011DA5000B6A06C /* Entry.swift */,
+				71AC70832011DA6600B6A06C /* Child.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -118,6 +132,7 @@
 		71AC70792011079900B6A06C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				71AC707D2011D85800B6A06C /* CloudKitManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -199,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71AC7066200E986C00B6A06C /* LaunchScreen.storyboard in Resources */,
+				71AC707C2011D7DB00B6A06C /* Default-568h@2x.png in Resources */,
 				71AC7063200E986C00B6A06C /* Assets.xcassets in Resources */,
 				71AC7061200E986C00B6A06C /* Main.storyboard in Resources */,
 			);
@@ -211,7 +227,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71AC70822011DA5000B6A06C /* Entry.swift in Sources */,
+				71AC707E2011D85800B6A06C /* CloudKitManager.swift in Sources */,
 				71AC705C200E986C00B6A06C /* AppDelegate.swift in Sources */,
+				71AC70842011DA6600B6A06C /* Child.swift in Sources */,
+				71AC70802011D97C00B6A06C /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
