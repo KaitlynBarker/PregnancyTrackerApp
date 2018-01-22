@@ -8,7 +8,67 @@
 
 import Foundation
 import CloudKit
+import UIKit
 
 class Entry {
+    fileprivate static var titleKey: String { return "title" }
+    fileprivate static var textKey: String { return "text" }
+    fileprivate static var timestampKey: String { return "timestamp" }
+    fileprivate static var photoDataKey: String { return "photoData" }
+    fileprivate static var badgesKey: String { return "badges" }
+    static var recordType: String { return "Entry" }
     
+    let photoData: Data?
+    let title: String
+    let text: String
+    let timestamp: Date
+    let badges: [CKReference]
+    
+    var photo: UIImage {
+        guard let photoData = photoData, let image = UIImage(data: photoData) else { return UIImage() }
+        
+        return image
+    }
+    
+    var ckRecordID: CKRecordID?
+    
+    init(photoData: Data?, title: String, text: String, timestamp: Date = Date(), badges: [CKReference] = []) {
+        
+        self.photoData = photoData
+        self.title = title
+        self.text = text
+        self.timestamp = timestamp
+        self.badges = badges
+    }
+    
+    init?(ckRecord: CKRecord) {
+        guard let photoData = ckRecord[Entry.photoDataKey] as? Data,
+        let title = ckRecord[Entry.titleKey] as? String,
+        let text = ckRecord[Entry.textKey] as? String,
+            let timestamp = ckRecord[Entry.timestampKey] as? Date else { return nil }
+        
+        self.photoData = photoData
+        self.title = title
+        self.text = text
+        self.timestamp = timestamp
+        self.badges = ckRecord[Entry.badgesKey] as? [CKReference] ?? []
+    }
+}
+
+extension CKRecord {
+    convenience init(entry: Entry) {
+        let recordID = entry.ckRecordID ?? CKRecordID(recordName: UUID().uuidString)
+        
+        self.init(recordType: Entry.recordType, recordID: recordID)
+        
+        if entry.badges == [] {
+        } else {
+            self.setValue(entry.badges, forKey: Entry.badgesKey)
+        }
+        
+        self.setValue(entry.photoData, forKey: Entry.photoDataKey)
+        self.setValue(entry.title, forKey: Entry.titleKey)
+        self.setValue(entry.text, forKey: Entry.textKey)
+        self.setValue(entry.timestamp, forKey: Entry.timestampKey)
+    }
 }

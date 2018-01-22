@@ -17,9 +17,9 @@ class User {
     fileprivate static var appleUserRefKey: String { return "appleUserRef" }
     static var recordType: String { return "User" }
     
-    var name: String
-    var email: String
-    var childRefs: [CKReference]
+    let name: String
+    let email: String
+    let childRefs: [CKReference]
     
     let appleUserRef: CKReference
     var ckRecordID: CKRecordID?
@@ -40,7 +40,6 @@ class User {
         self.email = email
         self.childRefs = ckRecord[User.childRefsKey] as? [CKReference] ?? []
         self.appleUserRef = appleUserRef
-        self.ckRecordID = ckRecord.recordID
     }
 }
 
