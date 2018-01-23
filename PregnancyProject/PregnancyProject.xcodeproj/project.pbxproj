@@ -22,6 +22,8 @@
 		71AC708A2016B95400B6A06C /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC70892016B95400B6A06C /* EntryController.swift */; };
 		71AC708C2016B96000B6A06C /* ChildController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC708B2016B96000B6A06C /* ChildController.swift */; };
 		71AC708E2016B96900B6A06C /* BadgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC708D2016B96900B6A06C /* BadgeController.swift */; };
+		71AC70902016CB4F00B6A06C /* Pregnancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC708F2016CB4F00B6A06C /* Pregnancy.swift */; };
+		71AC70922016CB8100B6A06C /* PregnancyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC70912016CB8100B6A06C /* PregnancyController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		71AC70892016B95400B6A06C /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		71AC708B2016B96000B6A06C /* ChildController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildController.swift; sourceTree = "<group>"; };
 		71AC708D2016B96900B6A06C /* BadgeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeController.swift; sourceTree = "<group>"; };
+		71AC708F2016CB4F00B6A06C /* Pregnancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pregnancy.swift; sourceTree = "<group>"; };
+		71AC70912016CB8100B6A06C /* PregnancyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PregnancyController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 				71AC70892016B95400B6A06C /* EntryController.swift */,
 				71AC708B2016B96000B6A06C /* ChildController.swift */,
 				71AC708D2016B96900B6A06C /* BadgeController.swift */,
+				71AC70912016CB8100B6A06C /* PregnancyController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				71AC70812011DA5000B6A06C /* Entry.swift */,
 				71AC70832011DA6600B6A06C /* Child.swift */,
 				71AC708520128BF100B6A06C /* Badge.swift */,
+				71AC708F2016CB4F00B6A06C /* Pregnancy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,7 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				71AC70822011DA5000B6A06C /* Entry.swift in Sources */,
+				71AC70902016CB4F00B6A06C /* Pregnancy.swift in Sources */,
 				71AC708C2016B96000B6A06C /* ChildController.swift in Sources */,
+				71AC70922016CB8100B6A06C /* PregnancyController.swift in Sources */,
 				71AC708620128BF100B6A06C /* Badge.swift in Sources */,
 				71AC708E2016B96900B6A06C /* BadgeController.swift in Sources */,
 				71AC707E2011D85800B6A06C /* CloudKitManager.swift in Sources */,

@@ -8,7 +8,83 @@
 
 import Foundation
 import CloudKit
+import UIKit
 
 class Child {
     
+    fileprivate static var nameKey: String { return "name" }
+    fileprivate static var dateOfBirthKey: String { return "dateOfBirth" }
+    fileprivate static var badgesKey: String { return "badges" }
+    fileprivate static var ageKey: String { return "age" }
+    fileprivate static var genderKey: String { return "gender" }
+    fileprivate static var entriesKey: String { return "entries" }
+    fileprivate static var photoDataKey: String { return "photoData" }
+    static var recordType: String { return "Child" }
+    
+    let name: String
+    let dateOfBirth: Date
+    let badges: [CKReference]
+    let age: Int
+    let gender: String
+    let entries: [CKReference]
+    let photoData: Data?
+    
+    var photo: UIImage {
+        guard let photoData = photoData, let image = UIImage(data: photoData) else { return UIImage() }
+        
+        return image
+    }
+    
+    var ckRecordID: CKRecordID?
+    
+    init(name: String, dateOfBirth: Date, badges: [CKReference] = [], age: Int, gender: String, entries: [CKReference] = [], photoData: Data?) {
+        
+        self.name = name
+        self.dateOfBirth = dateOfBirth
+        self.badges = badges
+        self.age = age
+        self.gender = gender
+        self.entries = entries
+        self.photoData = photoData
+    }
+    
+    init?(ckRecord: CKRecord) {
+        guard let name = ckRecord[Child.nameKey] as? String,
+        let dateOfBirth = ckRecord[Child.dateOfBirthKey] as? Date,
+        let age = ckRecord[Child.ageKey] as? Int,
+        let gender = ckRecord[Child.genderKey] as? String,
+            let photoData = ckRecord[Child.photoDataKey] as? Data else { return nil }
+        
+        self.name = name
+        self.dateOfBirth = dateOfBirth
+        self.age = age
+        self.gender = gender
+        self.photoData = photoData
+        self.badges = ckRecord[Child.badgesKey] as? [CKReference] ?? []
+        self.entries = ckRecord[Child.entriesKey] as? [CKReference] ?? []
+    }
+}
+
+extension CKRecord {
+    convenience init(child: Child) {
+        let recordID = child.ckRecordID ?? CKRecordID(recordName: UUID().uuidString)
+        
+        self.init(recordType: Child.recordType, recordID: recordID)
+        
+        if child.badges == [] {
+        } else {
+            self.setValue(child.badges, forKey: Child.badgesKey)
+        }
+        
+        if child.entries == [] {
+        } else {
+            self.setValue(child.entries, forKey: Child.entriesKey)
+        }
+        
+        self.setValue(child.name, forKey: Child.nameKey)
+        self.setValue(child.dateOfBirth, forKey: Child.dateOfBirthKey)
+        self.setValue(child.age, forKey: Child.ageKey)
+        self.setValue(child.gender, forKey: Child.genderKey)
+        self.setValue(child.photoData, forKey: Child.photoDataKey)
+    }
 }

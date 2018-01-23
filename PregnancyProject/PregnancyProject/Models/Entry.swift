@@ -11,6 +11,7 @@ import CloudKit
 import UIKit
 
 class Entry {
+    
     fileprivate static var titleKey: String { return "title" }
     fileprivate static var textKey: String { return "text" }
     fileprivate static var timestampKey: String { return "timestamp" }

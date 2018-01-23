@@ -10,5 +10,5 @@ import Foundation
 import CloudKit
 
 class Badge {
-    
+    // name, passedOff (bool), child ckreference, entry ckreference
 }
