@@ -18,6 +18,10 @@
 		71AC70822011DA5000B6A06C /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC70812011DA5000B6A06C /* Entry.swift */; };
 		71AC70842011DA6600B6A06C /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC70832011DA6600B6A06C /* Child.swift */; };
 		71AC708620128BF100B6A06C /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC708520128BF100B6A06C /* Badge.swift */; };
+		71AC70882016B94A00B6A06C /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC70872016B94A00B6A06C /* UserController.swift */; };
+		71AC708A2016B95400B6A06C /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC70892016B95400B6A06C /* EntryController.swift */; };
+		71AC708C2016B96000B6A06C /* ChildController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC708B2016B96000B6A06C /* ChildController.swift */; };
+		71AC708E2016B96900B6A06C /* BadgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC708D2016B96900B6A06C /* BadgeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		71AC70812011DA5000B6A06C /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		71AC70832011DA6600B6A06C /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		71AC708520128BF100B6A06C /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		71AC70872016B94A00B6A06C /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		71AC70892016B95400B6A06C /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		71AC708B2016B96000B6A06C /* ChildController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildController.swift; sourceTree = "<group>"; };
+		71AC708D2016B96900B6A06C /* BadgeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,10 @@
 		71AC70772011078700B6A06C /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				71AC70872016B94A00B6A06C /* UserController.swift */,
+				71AC70892016B95400B6A06C /* EntryController.swift */,
+				71AC708B2016B96000B6A06C /* ChildController.swift */,
+				71AC708D2016B96900B6A06C /* BadgeController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -231,10 +243,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				71AC70822011DA5000B6A06C /* Entry.swift in Sources */,
+				71AC708C2016B96000B6A06C /* ChildController.swift in Sources */,
 				71AC708620128BF100B6A06C /* Badge.swift in Sources */,
+				71AC708E2016B96900B6A06C /* BadgeController.swift in Sources */,
 				71AC707E2011D85800B6A06C /* CloudKitManager.swift in Sources */,
 				71AC705C200E986C00B6A06C /* AppDelegate.swift in Sources */,
+				71AC70882016B94A00B6A06C /* UserController.swift in Sources */,
 				71AC70842011DA6600B6A06C /* Child.swift in Sources */,
+				71AC708A2016B95400B6A06C /* EntryController.swift in Sources */,
 				71AC70802011D97C00B6A06C /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
