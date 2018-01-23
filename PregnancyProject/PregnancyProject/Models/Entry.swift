@@ -16,14 +16,14 @@ class Entry {
     fileprivate static var textKey: String { return "text" }
     fileprivate static var timestampKey: String { return "timestamp" }
     fileprivate static var photoDataKey: String { return "photoData" }
-    fileprivate static var badgesKey: String { return "badges" }
+    fileprivate static var badgeRefsKey: String { return "badgeRefs" }
     static var recordType: String { return "Entry" }
     
     let photoData: Data?
     let title: String
     let text: String
     let timestamp: Date
-    let badges: [CKReference]
+    let badgeRefs: [CKReference]
     
     var photo: UIImage {
         guard let photoData = photoData, let image = UIImage(data: photoData) else { return UIImage() }
@@ -39,7 +39,7 @@ class Entry {
         self.title = title
         self.text = text
         self.timestamp = timestamp
-        self.badges = badges
+        self.badgeRefs = badges
     }
     
     init?(ckRecord: CKRecord) {
@@ -52,7 +52,7 @@ class Entry {
         self.title = title
         self.text = text
         self.timestamp = timestamp
-        self.badges = ckRecord[Entry.badgesKey] as? [CKReference] ?? []
+        self.badgeRefs = ckRecord[Entry.badgeRefsKey] as? [CKReference] ?? []
     }
 }
 
@@ -62,9 +62,9 @@ extension CKRecord {
         
         self.init(recordType: Entry.recordType, recordID: recordID)
         
-        if entry.badges == [] {
+        if entry.badgeRefs == [] {
         } else {
-            self.setValue(entry.badges, forKey: Entry.badgesKey)
+            self.setValue(entry.badgeRefs, forKey: Entry.badgeRefsKey)
         }
         
         self.setValue(entry.photoData, forKey: Entry.photoDataKey)

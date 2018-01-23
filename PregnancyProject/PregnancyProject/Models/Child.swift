@@ -14,19 +14,19 @@ class Child {
     
     fileprivate static var nameKey: String { return "name" }
     fileprivate static var dateOfBirthKey: String { return "dateOfBirth" }
-    fileprivate static var badgesKey: String { return "badges" }
+    fileprivate static var badgeRefsKey: String { return "badgeRefs" }
     fileprivate static var ageKey: String { return "age" }
     fileprivate static var genderKey: String { return "gender" }
-    fileprivate static var entriesKey: String { return "entries" }
+    fileprivate static var entryRefsKey: String { return "entryRefs" }
     fileprivate static var photoDataKey: String { return "photoData" }
     static var recordType: String { return "Child" }
     
     let name: String
     let dateOfBirth: Date
-    let badges: [CKReference]
+    let badgeRefs: [CKReference]
     let age: Int
     let gender: String
-    let entries: [CKReference]
+    let entryRefs: [CKReference]
     let photoData: Data?
     
     var photo: UIImage {
@@ -41,10 +41,10 @@ class Child {
         
         self.name = name
         self.dateOfBirth = dateOfBirth
-        self.badges = badges
+        self.badgeRefs = badges
         self.age = age
         self.gender = gender
-        self.entries = entries
+        self.entryRefs = entries
         self.photoData = photoData
     }
     
@@ -60,8 +60,8 @@ class Child {
         self.age = age
         self.gender = gender
         self.photoData = photoData
-        self.badges = ckRecord[Child.badgesKey] as? [CKReference] ?? []
-        self.entries = ckRecord[Child.entriesKey] as? [CKReference] ?? []
+        self.badgeRefs = ckRecord[Child.badgeRefsKey] as? [CKReference] ?? []
+        self.entryRefs = ckRecord[Child.entryRefsKey] as? [CKReference] ?? []
     }
 }
 
@@ -71,14 +71,14 @@ extension CKRecord {
         
         self.init(recordType: Child.recordType, recordID: recordID)
         
-        if child.badges == [] {
+        if child.badgeRefs == [] {
         } else {
-            self.setValue(child.badges, forKey: Child.badgesKey)
+            self.setValue(child.badgeRefs, forKey: Child.badgeRefsKey)
         }
         
-        if child.entries == [] {
+        if child.entryRefs == [] {
         } else {
-            self.setValue(child.entries, forKey: Child.entriesKey)
+            self.setValue(child.entryRefs, forKey: Child.entryRefsKey)
         }
         
         self.setValue(child.name, forKey: Child.nameKey)
