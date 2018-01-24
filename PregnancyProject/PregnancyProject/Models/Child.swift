@@ -65,6 +65,12 @@ class Child {
     }
 }
 
+extension Child: Equatable {
+    static func ==(lhs: Child, rhs: Child) -> Bool {
+        return lhs.name == rhs.name && lhs.dateOfBirth == rhs.dateOfBirth && lhs.badgeRefs == rhs.badgeRefs && lhs.age == rhs.age && lhs.gender == rhs.gender && lhs.entryRefs == rhs.entryRefs && lhs.photoData == rhs.photoData
+    }
+}
+
 extension CKRecord {
     convenience init(child: Child) {
         let recordID = child.ckRecordID ?? CKRecordID(recordName: UUID().uuidString)

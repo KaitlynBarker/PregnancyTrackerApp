@@ -56,6 +56,12 @@ class Entry {
     }
 }
 
+extension Entry: Equatable {
+    static func ==(lhs: Entry, rhs: Entry) -> Bool {
+        return lhs.photoData == rhs.photoData && lhs.title == rhs.title && lhs.text == rhs.text && lhs.timestamp == rhs.timestamp && lhs.badgeRefs == rhs.badgeRefs
+    }
+}
+
 extension CKRecord {
     convenience init(entry: Entry) {
         let recordID = entry.ckRecordID ?? CKRecordID(recordName: UUID().uuidString)

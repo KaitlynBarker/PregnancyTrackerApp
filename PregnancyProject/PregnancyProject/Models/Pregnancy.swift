@@ -39,6 +39,12 @@ class Pregnancy {
     }
 }
 
+extension Pregnancy: Equatable {
+    static func ==(lhs: Pregnancy, rhs: Pregnancy) -> Bool {
+        return lhs.name == rhs.name && lhs.dueDate == rhs.dueDate && lhs.entryRefs == rhs.entryRefs
+    }
+}
+
 extension CKRecord {
     convenience init(pregnancy: Pregnancy) {
         let recordID = pregnancy.ckRecordID ?? CKRecordID(recordName: UUID().uuidString)

@@ -42,6 +42,12 @@ class Badge {
     }
 }
 
+extension Badge: Equatable {
+    static func ==(lhs: Badge, rhs: Badge) -> Bool {
+        return lhs.name == rhs.name && lhs.passedOff == rhs.passedOff && lhs.childRefs == rhs.childRefs && lhs.entryRefs == rhs.entryRefs
+    }
+}
+
 extension CKRecord {
     convenience init(badge: Badge) {
         let recordID = badge.ckRecordID ?? CKRecordID(recordName: UUID().uuidString)
