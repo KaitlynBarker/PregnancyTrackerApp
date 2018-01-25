@@ -10,5 +10,17 @@ import Foundation
 import CloudKit
 
 class UserController {
+    static let shared = UserController()
+    
+    private let cloudKitManager: CloudKitManager = {
+        return CloudKitManager()
+    }()
+    
+    // MARK: - Create
+    
+    // MARK: - Retreive/Fetch
+    
+    // MARK: - Update
+    
     
 }

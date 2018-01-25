@@ -10,5 +10,9 @@ import Foundation
 import CloudKit
 
 class PregnancyController {
+    static let shared = PregnancyController()
     
+    private let cloudKitManager: CloudKitManager = {
+        return CloudKitManager()
+    }()
 }

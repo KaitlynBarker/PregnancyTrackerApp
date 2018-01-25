@@ -10,5 +10,9 @@ import Foundation
 import CloudKit
 
 class ChildController {
+    static let shared = ChildController()
     
+    private let cloudKitManager: CloudKitManager = {
+        return CloudKitManager()
+    }()
 }

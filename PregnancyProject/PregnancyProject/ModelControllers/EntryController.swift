@@ -10,5 +10,9 @@ import Foundation
 import CloudKit
 
 class EntryController {
+    static let shared = EntryController()
     
+    private let cloudKitManager: CloudKitManager = {
+        return CloudKitManager()
+    }()
 }

@@ -10,5 +10,9 @@ import Foundation
 import CloudKit
 
 class BadgeController {
+    static let shared = BadgeController()
     
+    private let cloudKitManager: CloudKitManager = {
+        return CloudKitManager()
+    }()
 }
