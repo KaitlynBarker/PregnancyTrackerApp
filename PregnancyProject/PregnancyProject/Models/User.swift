@@ -17,8 +17,8 @@ class User {
     fileprivate static var appleUserRefKey: String { return "appleUserRef" }
     static var recordType: String { return "User" }
     
-    let name: String
-    let email: String
+    var name: String
+    var email: String
     let childRefs: [CKReference]
     
     let appleUserRef: CKReference
