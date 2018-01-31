@@ -47,20 +47,14 @@ class EntryController {
     
     // MARK: - Retreive/Fetch
     
-    func fetchEntryRecords(completion: @escaping ((Error?) -> Void) = { _ in }) {
-        cloudKitManager.fetchRecordsWith(type: Entry.recordType) { (records, error) in
-            defer { completion(error) }
-            
-            if let error = error {
-                NSLog("Error fetching entry record \(#file) \(#function) \n\(error.localizedDescription)")
-                return
-            }
-            
-            guard let records = records else { return }
-            
-            self.entries = records.flatMap { Entry(ckRecord: $0) }
-            
-        }
+    func fetchEntriesByChild(completion: @escaping (_ success: Bool) -> Void = { _ in }) {
+//        let sortDescriptors = [NSSortDescriptor(key: Entry.timestampKey, ascending: true)]
+        
+        
+    }
+    
+    func fetchEntriesByPregnancy(completion: @escaping (_ success: Bool) -> Void = { _ in }) {
+//        let sortDescriptors = [NSSortDescriptor(key: Entry.timestampKey, ascending: true)]
     }
     
     // MARK: - Update

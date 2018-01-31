@@ -14,7 +14,7 @@ class Entry {
     
     fileprivate static var titleKey: String { return "title" }
     fileprivate static var textKey: String { return "text" }
-    fileprivate static var timestampKey: String { return "timestamp" }
+    static var timestampKey: String { return "timestamp" }
     fileprivate static var photoDataKey: String { return "photoData" }
     fileprivate static var badgeRefsKey: String { return "badgeRefs" }
     static var recordType: String { return "Entry" }
