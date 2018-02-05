@@ -15,4 +15,16 @@ class ChildController {
     private let cloudKitManager: CloudKitManager = {
         return CloudKitManager()
     }()
+    
+    var currentChild: Child?
+    
+    // MARK: - Create
+    
+    // MARK: - Fetch
+    
+    // MARK: - Update
+    
+    // MARK: - Delete
+    
+    
 }

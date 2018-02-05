@@ -48,13 +48,49 @@ class EntryController {
     // MARK: - Retreive/Fetch
     
     func fetchEntriesByChild(completion: @escaping (_ success: Bool) -> Void = { _ in }) {
-//        let sortDescriptors = [NSSortDescriptor(key: Entry.timestampKey, ascending: true)]
+        let sortDescriptors = [NSSortDescriptor(key: Entry.timestampKey, ascending: true)]
         
+        guard let childRefID = ChildController.shared.currentChild?.ckRecordID else { completion(false); return }
+        
+        let childRef = CKReference(recordID: childRefID, action: .none)
+        
+        let predicate = NSPredicate(format: "child == %@", childRef)
+        
+        cloudKitManager.fetchRecordsWithType(Entry.recordType, predicte: predicate, sortDescriptors: sortDescriptors, recordFetchedBlock: nil) { (records, error) in
+            
+            if let error = error {
+                NSLog("error found. \(#file) \(#function) \n\(error.localizedDescription)")
+            }
+            
+            guard let childEntries = records else { completion(false); return }
+            let entries = childEntries.flatMap { Entry(ckRecord: $0) }
+            
+            self.entries = entries
+            completion(true)
+        }
         
     }
     
     func fetchEntriesByPregnancy(completion: @escaping (_ success: Bool) -> Void = { _ in }) {
-//        let sortDescriptors = [NSSortDescriptor(key: Entry.timestampKey, ascending: true)]
+        let sortDescriptors = [NSSortDescriptor(key: Entry.timestampKey, ascending: true)]
+        
+        guard let pregnancyRefID = PregnancyController.shared.currentPregnancy?.ckRecordID else { completion(false); return }
+        
+        let pregnancyRef = CKReference(recordID: pregnancyRefID, action: .none)
+        let predicate = NSPredicate(format: "pregnancy == %@", pregnancyRef)
+        
+        cloudKitManager.fetchRecordsWithType(Entry.recordType, predicte: predicate, sortDescriptors: sortDescriptors, recordFetchedBlock: nil) { (records, error) in
+            
+            if let error = error {
+                NSLog("Error found. \(#file) \(#function) \n\(error.localizedDescription)")
+            }
+            
+            guard let pregnancyEntries = records else { completion(false); return }
+            let entries = pregnancyEntries.flatMap { Entry(ckRecord: $0) }
+            
+            self.entries = entries
+            completion(true)
+        }
     }
     
     // MARK: - Update

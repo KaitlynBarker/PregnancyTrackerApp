@@ -15,4 +15,16 @@ class PregnancyController {
     private let cloudKitManager: CloudKitManager = {
         return CloudKitManager()
     }()
+    
+    var currentPregnancy: Pregnancy?
+    
+    // MARK: - Create
+    
+    // MARK: - Fetch
+    
+    // MARK: - Update
+    
+    // MARK: - Delete
+    
+    
 }
