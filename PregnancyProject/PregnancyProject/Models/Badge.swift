@@ -15,20 +15,23 @@ class Badge {
     fileprivate static var passedOffKey: String { return "passedOff" }
     fileprivate static var childRefsKey: String { return "childRefs" }
     fileprivate static var entryRefsKey: String { return "entryRefs" }
+    fileprivate static var pregnancyRefsKey: String { return "pregnancyRefs" }
     static var recordType: String { return "Badge" }
     
     let name: String
     let passedOff: Bool
     let childRefs: [CKReference]
     let entryRefs: [CKReference]
+    let pregnancyRefs: [CKReference]
     
     var ckRecordID: CKRecordID?
     
-    init(name: String, passedOff: Bool = false, childRefs: [CKReference] = [], entryRefs: [CKReference] = []) {
+    init(name: String, passedOff: Bool = false, childRefs: [CKReference] = [], entryRefs: [CKReference] = [], pregnancyRefs: [CKReference] = []) {
         self.name = name
         self.passedOff = passedOff
         self.childRefs = childRefs
         self.entryRefs = entryRefs
+        self.pregnancyRefs = pregnancyRefs
     }
     
     init?(ckRecord: CKRecord) {
@@ -39,12 +42,13 @@ class Badge {
         self.passedOff = passedOff
         self.childRefs = ckRecord[Badge.childRefsKey] as? [CKReference] ?? []
         self.entryRefs = ckRecord[Badge.entryRefsKey] as? [CKReference] ?? []
+        self.pregnancyRefs = ckRecord[Badge.pregnancyRefsKey] as? [CKReference] ?? []
     }
 }
 
 extension Badge: Equatable {
     static func ==(lhs: Badge, rhs: Badge) -> Bool {
-        return lhs.name == rhs.name && lhs.passedOff == rhs.passedOff && lhs.childRefs == rhs.childRefs && lhs.entryRefs == rhs.entryRefs
+        return lhs.name == rhs.name && lhs.passedOff == rhs.passedOff && lhs.childRefs == rhs.childRefs && lhs.entryRefs == rhs.entryRefs && lhs.pregnancyRefs == rhs.pregnancyRefs
     }
 }
 
@@ -62,6 +66,11 @@ extension CKRecord {
         if badge.entryRefs == [] {
         } else {
             self.setValue(badge.entryRefs, forKey: Badge.entryRefsKey)
+        }
+        
+        if badge.pregnancyRefs == [] {
+        } else {
+            self.setValue(badge.pregnancyRefs, forKey: Badge.pregnancyRefsKey)
         }
         
         self.setValue(badge.name, forKey: Badge.nameKey)
