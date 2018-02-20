@@ -10,6 +10,7 @@
 		719D32DB203CAF460077F038 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D32DA203CAF460077F038 /* Color.swift */; };
 		719D32DD203CAF540077F038 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D32DC203CAF540077F038 /* TabBarController.swift */; };
 		719D32DF203CB1C60077F038 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D32DE203CB1C60077F038 /* Font.swift */; };
+		719D32E1203CB6270077F038 /* ChildAndPregnancyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D32E0203CB6270077F038 /* ChildAndPregnancyViewController.swift */; };
 		71AC705C200E986C00B6A06C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC705B200E986C00B6A06C /* AppDelegate.swift */; };
 		71AC7061200E986C00B6A06C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71AC705F200E986C00B6A06C /* Main.storyboard */; };
 		71AC7063200E986C00B6A06C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71AC7062200E986C00B6A06C /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		719D32DA203CAF460077F038 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		719D32DC203CAF540077F038 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		719D32DE203CB1C60077F038 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		719D32E0203CB6270077F038 /* ChildAndPregnancyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildAndPregnancyViewController.swift; sourceTree = "<group>"; };
 		71AC7058200E986C00B6A06C /* PregnancyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PregnancyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71AC705B200E986C00B6A06C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71AC7060200E986C00B6A06C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		71AC70752011074300B6A06C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				719D32E0203CB6270077F038 /* ChildAndPregnancyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				71AC70882016B94A00B6A06C /* UserController.swift in Sources */,
 				71AC70842011DA6600B6A06C /* Child.swift in Sources */,
 				719D32DD203CAF540077F038 /* TabBarController.swift in Sources */,
+				719D32E1203CB6270077F038 /* ChildAndPregnancyViewController.swift in Sources */,
 				71AC708A2016B95400B6A06C /* EntryController.swift in Sources */,
 				71AC70802011D97C00B6A06C /* User.swift in Sources */,
 			);
