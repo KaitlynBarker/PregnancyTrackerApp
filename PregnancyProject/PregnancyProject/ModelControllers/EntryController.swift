@@ -95,6 +95,48 @@ class EntryController {
     
     // MARK: - Update
     
+    func updateEntry(entry: Entry?, photo: UIImage?, title: String, text: String, completion: @escaping ((_ success: Bool) -> Void) = { _ in }) {
+        
+        guard let entry = entry, let photo = photo else { return }
+        
+        let data = UIImageJPEGRepresentation(photo, 0.8)
+        
+        entry.photoData = data
+        entry.title = title
+        entry.text = text
+        
+        let entryRecord = CKRecord(entry: entry)
+        
+        cloudKitManager.modify(records: [entryRecord], perRecordCompletion: { (_, error) in
+            if let error = error {
+                NSLog("Error updating entry. \(#file) \(#function) \n\(error.localizedDescription)")
+                return
+            }
+        }) { (records, error) in
+            let success = records != nil
+            completion(success)
+        }
+    }
+    
     // MARK: - Delete
+    
+    func deleteRecord(recordID: CKRecordID, completion: @escaping ((Error?) -> Void) = { _ in }) {
+        cloudKitManager.deleteRecordWithID(recordID) { (ckRecordID, error) in
+            defer { completion(error) }
+            
+            if let error = error {
+                NSLog("Error deleting contact. \(#file) \(#function) \n\(error.localizedDescription)")
+                return
+            }
+        }
+    }
+    
+    func deleteEntry(entry: Entry) {
+        let entryRecord = CKRecord(entry: entry)
+        cloudKitManager.deleteOperation(entryRecord) {
+            guard let index = self.entries.index(of: entry) else { return }
+            self.entries.remove(at: index)
+        }
+    }
 }
 

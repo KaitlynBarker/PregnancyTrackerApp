@@ -19,9 +19,9 @@ class Entry {
     fileprivate static var badgeRefsKey: String { return "badgeRefs" }
     static var recordType: String { return "Entry" }
     
-    let photoData: Data?
-    let title: String
-    let text: String
+    var photoData: Data?
+    var title: String
+    var text: String
     let timestamp: Date
     let badgeRefs: [CKReference]
     

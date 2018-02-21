@@ -54,6 +54,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8e7-Yh-KVp">
                                         <rect key="frame" x="92" y="0.0" width="46" height="30"/>
                                         <state key="normal" title="Create"/>
+                                        <connections>
+                                            <action selector="createPregButton:" destination="OvR-sF-clY" eventType="touchUpInside" id="njT-gz-PLX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -64,7 +67,7 @@
                                     <constraint firstAttribute="height" constant="221" id="yH1-fW-Ewu"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="2K5-g8-qOQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="2K5-g8-qOQ" customClass="PregnancyTableViewCell" customModule="PregnancyProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2K5-g8-qOQ" id="xAV-8q-RE6">
@@ -105,6 +108,11 @@
                                                 <constraint firstAttribute="bottom" secondItem="LcD-Tx-GmD" secondAttribute="bottom" constant="5.5" id="YVv-PJ-pO6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dueDateLabel" destination="BBU-3r-Ys2" id="iAp-cx-s3y"/>
+                                            <outlet property="pregNameLabel" destination="3xu-YB-chD" id="UYc-5e-qds"/>
+                                            <outlet property="pregProfileImageView" destination="LcD-Tx-GmD" id="z8A-VB-Ro6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -112,7 +120,7 @@
                                 <rect key="frame" x="16" y="375" width="343" height="235"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="Kfj-fJ-VEF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="Kfj-fJ-VEF" customClass="ChildTableViewCell" customModule="PregnancyProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kfj-fJ-VEF" id="MYW-lm-FlV">
@@ -153,6 +161,11 @@
                                                 <constraint firstItem="E6r-dk-vcD" firstAttribute="leading" secondItem="MYW-lm-FlV" secondAttribute="leading" constant="8" id="zRy-mI-ldJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="childAgeLabel" destination="95z-aH-I3q" id="1Qr-eI-aSR"/>
+                                            <outlet property="childNameLabel" destination="UNS-Y6-AW7" id="pO7-wo-BXJ"/>
+                                            <outlet property="childProfileImageView" destination="E6r-dk-vcD" id="PVo-7t-EiP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -168,6 +181,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TzI-NJ-IeQ">
                                         <rect key="frame" x="49.5" y="0.0" width="46.5" height="30"/>
                                         <state key="normal" title="Create"/>
+                                        <connections>
+                                            <action selector="createChildButton:" destination="OvR-sF-clY" eventType="touchUpInside" id="0al-Gs-WZs"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -194,6 +210,10 @@
                         <viewLayoutGuide key="safeArea" id="tsk-Sx-Tck"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="BgH-rn-rdk"/>
+                    <connections>
+                        <outlet property="childListTableView" destination="SDB-j5-JCO" id="hTS-9Z-bKx"/>
+                        <outlet property="pregListTableView" destination="ffR-Pf-9Cd" id="Ze7-vY-JHb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmd-fj-XyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
