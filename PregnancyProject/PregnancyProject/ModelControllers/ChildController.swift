@@ -18,6 +18,14 @@ class ChildController {
     
     var currentChild: Child?
     
+    var children: [Child] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                // notification
+            }
+        }
+    }
+    
     // MARK: - Create
     
     // MARK: - Fetch
