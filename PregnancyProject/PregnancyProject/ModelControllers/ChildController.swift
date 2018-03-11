@@ -81,11 +81,22 @@ class ChildController {
     
     // MARK: - Delete
     
-    func deleteRecord() {
-        
+    func deleteRecord(recordID: CKRecordID, completion: @escaping ((Error?) -> Void) = { _ in }) {
+        cloudKitManager.deleteRecordWithID(recordID) { (ckRecordID, error) in
+            defer { completion(error) }
+            
+            if let error = error {
+                NSLog("Error deleting child record. \(#file) \(#function) \n\(error.localizedDescription)")
+                return
+            }
+        }
     }
     
-    func deleteChild() {
-        
+    func deleteChild(child: Child) {
+        let childRecord = CKRecord(child: child)
+        cloudKitManager.deleteOperation(childRecord) {
+            guard let index = self.children.index(of: child) else { return }
+            self.children.remove(at: index)
+        }
     }
 }

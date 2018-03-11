@@ -127,7 +127,7 @@ class EntryController {
             defer { completion(error) }
             
             if let error = error {
-                NSLog("Error deleting contact. \(#file) \(#function) \n\(error.localizedDescription)")
+                NSLog("Error deleting entry. \(#file) \(#function) \n\(error.localizedDescription)")
                 return
             }
         }
