@@ -67,3 +67,8 @@ class ChildAndPregnancyViewController: UIViewController, UITableViewDelegate, UI
     }
 
 }
+
+/*
+ pregnancyCell
+ childCell
+*/

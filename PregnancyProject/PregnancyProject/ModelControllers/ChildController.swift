@@ -55,7 +55,37 @@ class ChildController {
     
     // MARK: - Update
     
+    func updateChildInfo(child: Child?, image: UIImage?, name: String, dateOfBirth: Date = Date(), age: Int, gender: String, completion: @escaping ((_ success: Bool) -> Void) = { _ in }) {
+        
+        guard let child = child, let image = image else { return }
+        let data = UIImageJPEGRepresentation(image, 0.8)
+        
+        child.name = name
+        child.dateOfBirth = dateOfBirth
+        child.age = age
+        child.gender = gender
+        child.photoData = data
+        
+        let childRecord = CKRecord(child: child)
+        
+        cloudKitManager.modify(records: [childRecord], perRecordCompletion: { (_, error) in
+            if let error = error {
+                NSLog("Error updating child info. \(#file) \(#function) \n\(error.localizedDescription)")
+                return
+            }
+        }) { (records, error) in
+            let success = records != nil
+            completion(success)
+        }
+    }
+    
     // MARK: - Delete
     
+    func deleteRecord() {
+        
+    }
     
+    func deleteChild() {
+        
+    }
 }

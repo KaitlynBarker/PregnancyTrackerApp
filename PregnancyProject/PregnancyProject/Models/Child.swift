@@ -21,13 +21,13 @@ class Child {
     fileprivate static var photoDataKey: String { return "photoData" }
     static var recordType: String { return "Child" }
     
-    let name: String
-    let dateOfBirth: Date
+    var name: String
+    var dateOfBirth: Date
     let badgeRefs: [CKReference]
-    let age: Int
-    let gender: String
+    var age: Int
+    var gender: String
     let entryRefs: [CKReference]
-    let photoData: Data?
+    var photoData: Data?
     
     var photo: UIImage {
         guard let photoData = photoData, let image = UIImage(data: photoData) else { return UIImage() }
