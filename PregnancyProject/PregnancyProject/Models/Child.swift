@@ -13,7 +13,7 @@ import UIKit
 class Child {
     
     fileprivate static var nameKey: String { return "name" }
-    fileprivate static var dateOfBirthKey: String { return "dateOfBirth" }
+    static var dateOfBirthKey: String { return "dateOfBirth" }
     fileprivate static var badgeRefsKey: String { return "badgeRefs" }
     fileprivate static var ageKey: String { return "age" }
     fileprivate static var genderKey: String { return "gender" }

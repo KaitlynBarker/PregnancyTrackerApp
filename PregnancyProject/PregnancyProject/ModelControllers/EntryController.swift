@@ -30,6 +30,8 @@ class EntryController {
     func createEntry(image: UIImage?, title: String, text: String, completion: @escaping (Error?) -> Void) {
         guard let image = image, let data = UIImageJPEGRepresentation(image, 0.8) else { return }
         
+        // possibly make image an array. then do image as a map?. something that i can get one at a time. and then turn in into data.
+        
         let entry = Entry(photoData: data, title: title, text: text)
         
         let entryRecord = CKRecord(entry: entry)
