@@ -113,4 +113,12 @@ class UserController {
         }
     }
     
+    // MARK: - Delete
+    
+    // so user can delete account if desired
+    
+    func deleteUser() {
+        // FIXME: - fill this out
+    }
+    
 }

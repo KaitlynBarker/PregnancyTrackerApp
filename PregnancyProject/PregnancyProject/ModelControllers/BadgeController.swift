@@ -15,4 +15,15 @@ class BadgeController {
     private let cloudKitManager: CloudKitManager = {
         return CloudKitManager()
     }()
+    
+    // current badge?
+    
+    // MARK: - Create
+    
+    // MARK: - Fetch
+    
+    // MARK: - Update
+    
+    // MARK: - Delete
+    
 }

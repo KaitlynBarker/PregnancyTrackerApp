@@ -50,7 +50,20 @@ class ChildController {
     // MARK: - Fetch
     
     func fetchChildren(completion: @escaping (_ success: Bool) -> Void = { _ in }) {
-//        let sortDescriptors = [NSSortDescriptor(key: Child.dateOfBirthKey, ascending: true)]
+        let sortDescriptors = [NSSortDescriptor(key: Child.dateOfBirthKey, ascending: true)]
+        
+        cloudKitManager.fetchRecordsWith(type: Child.recordType, sortDescriptors: sortDescriptors) { (records, error) in
+            
+            if let error = error {
+                NSLog("error found. \(#file) \(#function) \n\(error.localizedDescription)")
+            }
+            
+            guard let childrenRecords = records else { completion(false); return }
+            let children = childrenRecords.flatMap { Child(ckRecord: $0) }
+            
+            self.children = children
+            completion(true)
+        }
     }
     
     // MARK: - Update
