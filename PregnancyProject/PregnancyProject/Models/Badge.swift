@@ -26,7 +26,7 @@ class Badge {
     
     var ckRecordID: CKRecordID?
     
-    init(name: String, passedOff: Bool = false, childRefs: [CKReference] = [], entryRefs: [CKReference] = [], pregnancyRefs: [CKReference] = []) {
+    init(name: String, passedOff: Bool, childRefs: [CKReference] = [], entryRefs: [CKReference] = [], pregnancyRefs: [CKReference] = []) {
         self.name = name
         self.passedOff = passedOff
         self.childRefs = childRefs

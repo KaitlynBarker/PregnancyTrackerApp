@@ -18,12 +18,51 @@ class BadgeController {
     
     // current badge?
     
+    var badges: [Badge] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                //notification info
+            }
+        }
+    }
+    
     // MARK: - Create
+    
+    func createBadge(name: String, passedOff: Bool, completion: @escaping (Error?) -> Void) {
+        let badge = Badge(name: name, passedOff: passedOff)
+        let badgeRecord = CKRecord(badge: badge)
+        
+        cloudKitManager.saveRecord(badgeRecord) { (_, error) in
+            defer { completion(error) }
+            
+            if let error = error {
+                NSLog("Error saving record. \(#file) \(#function) \n\(error.localizedDescription)")
+                return
+            }
+            self.badges.append(badge)
+        }
+    }
     
     // MARK: - Fetch
     
+    func fetchBadges() {
+        
+    }
+    
+    func fetchBadgesByChild() {
+        
+    }
+    
+    func fetchBadgesByPregnancy() {
+        
+    }
+    
     // MARK: - Update
     
-    // MARK: - Delete
+    func updateBadge() {
+        
+    }
+    
+    // MARK: - Delete - Im not sure if we need this.
     
 }
