@@ -12,7 +12,7 @@ import CloudKit
 class Badge {
     
     fileprivate static var nameKey: String { return "name" }
-    fileprivate static var passedOffKey: String { return "passedOff" }
+    static var passedOffKey: String { return "passedOff" }
     fileprivate static var childRefsKey: String { return "childRefs" }
     fileprivate static var entryRefsKey: String { return "entryRefs" }
     fileprivate static var pregnancyRefsKey: String { return "pregnancyRefs" }
