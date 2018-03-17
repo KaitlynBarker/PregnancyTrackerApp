@@ -18,8 +18,8 @@ class Badge {
     fileprivate static var pregnancyRefsKey: String { return "pregnancyRefs" }
     static var recordType: String { return "Badge" }
     
-    let name: String
-    let passedOff: Bool
+    var name: String
+    var passedOff: Bool
     let childRefs: [CKReference]
     let entryRefs: [CKReference]
     let pregnancyRefs: [CKReference]

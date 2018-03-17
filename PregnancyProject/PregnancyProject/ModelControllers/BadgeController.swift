@@ -59,8 +59,24 @@ class BadgeController {
     
     // MARK: - Update
     
-    func updateBadge() {
+    func updateBadge(badge: Badge?, name: String, passedOff: Bool, completion: @escaping ((_ success: Bool) -> Void) = { _ in }) {
         
+        guard let badge = badge else { return }
+        
+        badge.name = name
+        badge.passedOff = passedOff
+        
+        let badgeRecord = CKRecord(badge: badge)
+        
+        cloudKitManager.modify(records: [badgeRecord], perRecordCompletion: { (_, error) in
+            if let error = error {
+                NSLog("Error updating badge. \(#file) \(#function) \n\(error.localizedDescription)")
+                return
+            }
+        }) { (records, error) in
+            let success = records != nil
+            completion(success)
+        }
     }
     
     // MARK: - Delete - Im not sure if we need this.
