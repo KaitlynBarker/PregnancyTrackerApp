@@ -12,13 +12,13 @@ import CloudKit
 class Pregnancy {
     
     fileprivate static var nameKey: String { return "name" }
-    fileprivate static var dueDateKey: String { return "dueDate" }
+    static var dueDateKey: String { return "dueDate" }
     fileprivate static var entryRefsKey: String { return "entryRefs" }
     fileprivate static var badgeRefsKey: String { return "badgeRefs" }
     static var recordType: String { return "Pregnancy" }
     
-    let name: String
-    let dueDate: Date
+    var name: String
+    var dueDate: Date
     let entryRefs: [CKReference]
     let badgeRefs: [CKReference]
     

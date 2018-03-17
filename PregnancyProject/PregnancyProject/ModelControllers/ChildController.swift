@@ -40,7 +40,7 @@ class ChildController {
             defer { completion(error) }
             
             if let error = error {
-                NSLog("Error saving record. \(#file) \(#function) \n\(error.localizedDescription)")
+                NSLog("Error creating record. \(#file) \(#function) \n\(error.localizedDescription)")
                 return
             }
             self.children.append(child)
