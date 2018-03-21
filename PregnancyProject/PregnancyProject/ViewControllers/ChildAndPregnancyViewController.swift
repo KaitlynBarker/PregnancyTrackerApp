@@ -64,10 +64,17 @@ class ChildAndPregnancyViewController: UIViewController, UITableViewDelegate, UI
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            if tableView == pregListTableView {
+                let pregnancy = PregnancyController.shared.pregnancies[indexPath.row]
+                PregnancyController.shared.deletePregnancy(pregnancy: pregnancy)
+            } else if tableView == childListTableView {
+                let child = ChildController.shared.children[indexPath.row]
+                ChildController.shared.deleteChild(child: child)
+            }
             
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        
+        // MIGHT NOT WORK. CHECK IF DELETING DOESN'T WORK OR CAUSES CRASHES
     }
     
 
