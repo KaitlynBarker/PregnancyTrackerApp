@@ -31,21 +31,33 @@ class ChildAndPregnancyViewController: UIViewController, UITableViewDelegate, UI
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: - Table view data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        if tableView == pregListTableView {
+            return PregnancyController.shared.pregnancies.count
+        } else if tableView == childListTableView {
+            return ChildController.shared.children.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let pregnancyCell = tableView.dequeueReusableCell(withIdentifier: "pregnancyCell", for: indexPath) as? PregnancyTableViewCell, let childCell = tableView.dequeueReusableCell(withIdentifier: "childCell", for: indexPath) as? ChildTableViewCell else { return UITableViewCell() }
         
-        return cell
+        let pregnancy = PregnancyController.shared.pregnancies[indexPath.row]
+        let child = ChildController.shared.children[indexPath.row]
+        
+        if tableView == pregListTableView {
+            pregnancyCell.pregnancy = pregnancy
+            return pregnancyCell
+        } else if tableView == childListTableView {
+            childCell.child = child
+            return childCell
+        } else {
+            return UITableViewCell()
+        }
     }
     
     // Override to support editing the table view.
@@ -69,6 +81,5 @@ class ChildAndPregnancyViewController: UIViewController, UITableViewDelegate, UI
 }
 
 /*
- pregnancyCell
- childCell
+ 
 */
