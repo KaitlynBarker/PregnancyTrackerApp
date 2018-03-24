@@ -21,16 +21,6 @@ class ChildAndPregnancyViewController: UIViewController, UITableViewDelegate, UI
         // Do any additional setup after loading the view.
     }
     
-    // MARK: - Actions
-    
-    @IBAction func createPregButton(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func createChildButton(_ sender: UIButton) {
-        
-    }
-    
     // MARK: - Table view data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
